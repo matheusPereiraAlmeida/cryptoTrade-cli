@@ -1,0 +1,62 @@
+<div class="home">
+  <div class="row">
+    <div class="col-sm-12 col-md-6" id="logo-img">
+      <img class="logo" src="assets/images/logo.png" alt="logo" width="200" height="200">
+    </div>
+    <div class="col-sm-12 col-md-6" id="logo-text">
+      <p id="logo-text"> Select the currencies to start. </p>
+    </div>
+  </div>
+
+  <div class="row content" id="content">
+    
+    <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()" >
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div>
+              <label class="content-line1">Trade</label>
+            </div>
+            <div class="content-line2">
+              <select class="custom-select" formControlName="moedaDeOrigem" (click)="getSelectedValue($event)">
+                <option value="" disabled>Select currency</option>
+                <option>Bitcoin (BTC)</option>
+                <option>Bitcoin Cash (BCH)</option>
+                <option>Ethereum (ETH)</option>
+                <option>Monero (XMR)</option>
+                <option>Zcash (ZEC)</option>          
+              </select>
+              <input type="number" class="form-control content-line2" id="quantidadeDaMoedaDeOrigem" placeholder="Value" formControlName=quantidadeDaMoedaDeOrigem > 
+            </div>
+
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div>
+              <label class="content-line1">To</label>
+            </div>
+            <div class="content-line2">
+              <select class="custom-select" formControlName="moedaDeDestino">
+                <option value="" disabled>Select currency</option>
+                <option>Bitcoin (BTC)</option>
+                <option>Bitcoin Cash (BCH)</option>
+                <option>Ethereum (ETH)</option>
+                <option>Monero (XMR)</option>
+                <option>Zcash (ZEC)</option>           
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 text-div"> 
+          <p> 1 {{dropdown_trade_selected_initials}} = ${{this.CachedCurrencyIds[this.dropdown_trade_selected_id.toString()]}} USD </p>
+        </div>
+      
+        <div class="col-md-12 submit-div"> 
+          <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary col-md-5">Search</button>
+        </div>
+      
+    </form>
+  </div>  
+  <app-footer> </app-footer>
+
+
+</div>
