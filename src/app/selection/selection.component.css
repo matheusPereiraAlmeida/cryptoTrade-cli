@@ -41,3 +41,14 @@
     margin: 50px;
     justify-content: center;
 }
+
+.footer{
+    font-family: 'Poppins';
+    font-size: 24px;
+    vertical-align: middle;
+    color: #4E8FB4;
+}
+
+.teste{
+    font-weight: bold;
+}

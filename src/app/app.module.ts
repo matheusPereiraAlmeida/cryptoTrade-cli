@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 //components 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { SelectionComponent } from './selection/selection.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { SuccessComponent } from './success/success.component';
@@ -21,7 +20,6 @@ import { MainComponent } from './main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     SelectionComponent,
     ConfirmationComponent,
     SuccessComponent,

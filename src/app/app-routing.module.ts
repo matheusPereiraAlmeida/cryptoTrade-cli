@@ -6,7 +6,7 @@ import { MainComponent } from './main/main.component'
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'selection/:moedaDeOrigem/:moedaDeDestino/:quantidadeDaMoedaDeOrigem', component: SelectionComponent }
+  { path: 'selection/:id/:moedaDeOrigem/:moedaDeDestino/:quantidadeDaMoedaDeOrigem', component: SelectionComponent }
 ];
 
 @NgModule({

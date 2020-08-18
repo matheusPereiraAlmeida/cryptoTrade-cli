@@ -53,9 +53,9 @@ export class MainComponent implements OnInit {
 
   //vamos redicionar aqui pra proxima pagina, passando os paremetros
   onSubmit(){
-    console.log("entrou")
     this.router.navigate(
     ['selection',
+    this.dropdown_trade_selected_id,
     this.formulario.controls['moedaDeOrigem'].value,
     this.formulario.controls['moedaDeDestino'].value,
     this.formulario.controls['quantidadeDaMoedaDeOrigem'].value
@@ -109,7 +109,6 @@ export class MainComponent implements OnInit {
     this.is_dropdown_trade_selected_initials_value_cached = this.isCached(this.dropdown_trade_selected_id);
 
     if (this.is_dropdown_trade_selected_initials_value_cached == NOT_STORED_IN_CASH.toString()){
-        console.log("Chamada pro get");
         
         this.httpClient.get<string>(environment.API+'/api/coin/'+this.dropdown_trade_selected_id).subscribe
         ( 
