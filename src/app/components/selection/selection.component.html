@@ -21,8 +21,14 @@
     <div class="col-sm-12 col-md-8" *ngIf="moedaDeOrigem == 'Bitcoin (BTC)'">
       <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWM0ZmU1MjMtMjAzZi00NmMzLWI4ZTMtNWQwNGU3NjUyZWEyIiwidCI6IjdlOTNlMjg2LWIyOWEtNDQ1NC1hNDFhLWU4NDE5ZWM5ZGViNSJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>    
     </div>
-    <div class="col-sm-12 col-md-4">
-      o src vai mudar dinamicamente pra 2 urls
+    <div class="col-sm-12 col-md-4" style="text-align: center;">
+     <p><img src={{coinImage}} alt="logo" width="120" height="80"></p>
+     <p class="texts">Currency of Origin</p>
+     <p>{{moedaDeOrigem}}</p>
+     <p class="texts">Currency of Destin</p>
+     <p>{{moedaDeDestino}}</p>
+     <p class="texts">Quantity to exchange</p>
+     <p>{{quantidadeDaMoedaDeOrigem}}</p>
     </div>
   </div>
   
@@ -30,7 +36,6 @@
   <div *ngFor="let hero of ListOfMarkets" class="row" style="margin-left: 300px;">
     <div class="col-sm-12 col-md-2">
       <div class="row teste">{{hero.name}}</div>
-      <div class="row teste"><img src={{coinImage}} alt="logo" width="120" height="80"></div>
     </div>
     <div class="col-sm-12 col-md-2">
       <div class="row teste">Base Rate Price in USD</div><p  style="font-weight: normal;">${{hero.price_usd}}</p>      
@@ -45,9 +50,9 @@
 
     <div class="col-sm-12 col-md-3">
       <div class="row teste">
-        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary col-md-5" (click)="showAlert()">Search</button>   
-        <div class="row teste" *ngIf="hero.isFirst"><img src="assets/images/best-offer-icon.png" alt="logo" width="70" height="80"></div>
+        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary col-md-5" (click)="showAlert()">Search</button>        
       </div>
+      <div class="row teste" *ngIf="hero.isFirst"><img src="assets/images/best-offer-icon.png" alt="logo" width="70" height="80"></div>
     </div>
     
   

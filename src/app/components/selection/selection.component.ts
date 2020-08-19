@@ -50,6 +50,7 @@ export class SelectionComponent implements OnInit {
       value.forEach(element => {
         this.populate(element);
       });
+      this.ListOfMarkets[0].isFirst = true;
       this.currentDateTime = new Date().toJSON("yyyy/MM/dd HH:mm");
       });
 

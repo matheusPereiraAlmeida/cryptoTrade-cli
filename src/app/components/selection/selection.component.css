@@ -25,6 +25,12 @@
     text-align: center;
 }
 
+.texts{
+    font-family: 'Poppins';
+    font-size: 18px;
+    color: #4E8FB4;
+}
+
 #rateGraph-second-text{
     font-family: 'Poppins';
     font-size: 20px;
