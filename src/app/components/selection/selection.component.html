@@ -1,0 +1,67 @@
+<div class="home">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6" id="logo-img">
+      <img class="logo" src="assets/images/logo.png" alt="logo" width="200" height="200">
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <p id="logo-text"> Analyse the offers. </p>
+      <p id="date-text"> {{currentDateTime | date:'medium'}} </p>
+    </div>
+  </div>
+  
+  <div class="row content">
+    <div class="col-sm-12 col-md-12">
+      <p id="rateGraph-text"> RateGraph </p>
+      <p id="rateGraph-second-text"> See the currency rates through time </p>
+    </div>
+  </div>
+
+  <div class="row content">
+    <div class="col-sm-12 col-md-8" *ngIf="moedaDeOrigem == 'Bitcoin (BTC)'">
+      <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOWM0ZmU1MjMtMjAzZi00NmMzLWI4ZTMtNWQwNGU3NjUyZWEyIiwidCI6IjdlOTNlMjg2LWIyOWEtNDQ1NC1hNDFhLWU4NDE5ZWM5ZGViNSJ9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>    
+    </div>
+    <div class="col-sm-12 col-md-4">
+      o src vai mudar dinamicamente pra 2 urls
+    </div>
+  </div>
+  
+<div *ngIf="ListOfMarkets.length > 0">
+  <div *ngFor="let hero of ListOfMarkets" class="row" style="margin-left: 300px;">
+    <div class="col-sm-12 col-md-2">
+      <div class="row teste">{{hero.name}}</div>
+      <div class="row teste"><img src={{coinImage}} alt="logo" width="120" height="80"></div>
+    </div>
+    <div class="col-sm-12 col-md-2">
+      <div class="row teste">Base Rate Price in USD</div><p  style="font-weight: normal;">${{hero.price_usd}}</p>      
+      <div class="row teste">Base Exchange Price in {{hero.quote}}</div><p  style="font-weight: normal;"> {{hero.price}}</p>
+    </div>
+   
+    <div class="col-sm-12 col-md-2">
+      <div class="row teste">Total Rate Price in USD</div><p style="font-weight: normal;">${{hero.price_usdTotal}}</p>
+      <div class="row teste">Total Exchange Price in {{hero.quote}} </div><p style="font-weight: normal;">{{hero.priceTotal}}</p>
+      
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+      <div class="row teste">
+        <button type="submit" id="singlebutton" name="singlebutton" class="btn btn-primary col-md-5" (click)="showAlert()">Search</button>   
+        <div class="row teste" *ngIf="hero.isFirst"><img src="assets/images/best-offer-icon.png" alt="logo" width="70" height="80"></div>
+      </div>
+    </div>
+    
+  
+
+    <hr style="width: 70%; background-color: #989898; margin-left: -20px;">
+  
+  </div>
+</div>
+  
+  <div class="container text-center">
+    <p class="footer">Crypto Trade</p>
+    <p class="footer">The best solution for trading currencies</p>
+  </div>
+
+</div>
+  
+ 

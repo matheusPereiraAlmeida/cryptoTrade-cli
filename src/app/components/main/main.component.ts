@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import './main.component.css';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { CrudService } from '../shared/crud-service';
+import { CrudService } from '../../shared/crud-service';
 import { environment } from 'src/environments/environment';
 import { delay, take } from 'rxjs/operators';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -50,8 +50,6 @@ export class MainComponent implements OnInit {
     this.initializeHash();
   }
 
-
-  //vamos redicionar aqui pra proxima pagina, passando os paremetros
   onSubmit(){
     this.router.navigate(
     ['selection',
@@ -60,15 +58,6 @@ export class MainComponent implements OnInit {
     this.formulario.controls['moedaDeDestino'].value,
     this.formulario.controls['quantidadeDaMoedaDeOrigem'].value
     ], { relativeTo: this.route });
-    /*
-    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value)).subscribe(dados => {
-      console.log(dados);
-      
-      //reseta o form
-      this.resetar();
-    },
-    (error: any) => alert("erro"));//com esse erro ele não reseta
-    */
   }
 
   getSelectedValue(event: any){
@@ -143,9 +132,5 @@ export class MainComponent implements OnInit {
     this.CachedCurrencyIds[ETH_ID.toString()] = 0;
     this.CachedCurrencyIds[XMR_ID.toString()] = 0;
     this.CachedCurrencyIds[ZEC_ID.toString()] = 0;
-  }
-
-  resetar(){
-    this.formulario.reset();
   }
 }

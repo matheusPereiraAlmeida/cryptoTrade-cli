@@ -1,7 +1,15 @@
 export interface rate{
-    nome: string;
+    name: string;
+    base: string;      
+    price: number; 
+    price_usd: number;
+    quote: string;
+    time: number;
+    volume: number;
+    volume_usd: number;
     image: string;
-    rate: number;
-    exchange: number;
-    total: number;
+    price_usdTotal: number;
+    priceTotal: number;
+    isFirst: boolean;
 }
+
